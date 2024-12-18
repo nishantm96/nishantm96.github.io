@@ -10,7 +10,6 @@ This is a solution to the Frontend Mentor Challenge [Blog Preview Card](https://
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-- [Author](#author)
 
 
 ## Overview
