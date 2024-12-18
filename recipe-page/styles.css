@@ -66,6 +66,12 @@ body {
     color: var(--brown-800);
 }
 
+.recipe-content .duration-section h2 {
+    font-family: Outfit, sans-serif;
+    color: var(--rose-800);
+    font-size: 20px;
+}
+
 /* Duration Section */
 .duration-section {
     background-color: var(--rose-50);
@@ -78,7 +84,7 @@ body {
     padding: 0;
 }
 
-.duration-section h3 {
+.duration-section h2 {
     margin: 0;
     margin-bottom: 10px;
 }
