@@ -1,6 +1,6 @@
 # Frontend Mentor Solutions
 
-This is a repo of solutions for Frontend Mentor Challenges - [Frontend Mentor Solutions](https://nishantm96.github.io).
+This is a repo of my solutions for Frontend Mentor Challenges.
 
 ## List of Solutions
 
