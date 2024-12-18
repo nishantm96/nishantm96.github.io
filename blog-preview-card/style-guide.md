@@ -11,20 +11,20 @@ The designs were created to the following widths:
 
 ## Colors
 
+- Yellow: hsl(47, 88%, 63%)
+
 - White: hsl(0, 0%, 100%)
 
-- Slate 300: hsl(212, 45%, 89%)
-- Slate 500: hsl(216, 15%, 48%)
-- Slate 900: hsl(218, 44%, 22%)
+- Gray 500: hsl(0, 0%, 42%)
+- Gray 950: hsl(0, 0%, 7%)
 
 ## Typography
 
 ### Body Copy
 
-- Font size (paragraph): 15px
+- Font size (paragraph): 16px
 
 ### Font
 
-- Family: [Outfit](https://fonts.google.com/specimen/Outfit)
-- Weights: 400, 700
-
+- Family: [Figtree](https://fonts.google.com/specimen/Figtree)
+- Weights: 500, 800

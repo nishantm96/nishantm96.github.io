@@ -1,0 +1,135 @@
+@font-face {
+    font-family: Figtree;
+    src: url(./assets/fonts/Figtree-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: FigtreeBold;
+    src: url(./assets/fonts/static/Figtree-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: FigtreeSemiBold;
+    src: url(./assets/fonts/static/Figtree-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: FigtreeItalic;
+    src: url(./assets/fonts/static/Figtree-Italic-VariableFont_wght.ttf);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --grey-500: hsl(0, 0%, 42%);
+    --grey-950: hsl(0, 0%, 7%);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: "Figtree", sans-serif;
+    background-color: var(--yellow);
+}
+
+.page-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.blog-card {
+    width: 320px;
+    aspect-ratio: 11 / 16;
+    border: 1px solid var(--grey-950);
+    border-radius: 20px;
+    box-shadow: 6px 6px 0 var(--grey-950);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.blog-card:hover, 
+.blog-card:active,
+.blog-card:focus {
+    cursor: pointer;
+}
+
+
+.blog-card:hover h3, 
+.blog-card:active h3,
+.blog-card:focus h3 {
+    color: var(--yellow);
+}
+
+.blog-card img {
+    border-radius: 8px;
+    flex-grow: 0;
+}
+
+.blog-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    flex-grow: 0;
+}
+
+.blog-card-badge {
+    background-color: var(--yellow);
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.blog-card-date {
+    font-size: 16px;
+}
+
+.blog-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.blog-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.blog-card-content > * {
+    margin: 0;
+}
+
+.blog-card-content h3 {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.blog-card-content p {
+    color: var(--grey-500);
+    line-height: 1.5;
+}
+
+.blog-card-author-avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.blog-card-author {
+    font-weight: 800;
+}
