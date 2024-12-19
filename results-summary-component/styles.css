@@ -1,0 +1,233 @@
+@font-face {
+    font-family: HankerGrotesk;
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --light-red: 0, 100%, 67%;
+    --green-teal: 166, 100%, 37%;
+    --orangey-yellow: 39, 100%, 56%;
+    --cobalt-blue: 234, 85%, 45%;
+
+    --lightslate-blue: hsl(252, 100%, 67%);
+    --lightroyal-blue: hsl(241, 81%, 54%);
+
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: 224, 30%, 27%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-size: 18px;
+    font-family: HankerGrotesk, sans-serif;
+}
+
+.page-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.result-summary-container {
+    border-radius: 1rem;
+    background-color: var(--white);
+    display: flex;
+    box-shadow: 10px 10px 20px 0 var(--pale-blue);
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.result-summary-container section {
+    width: 18rem;
+}
+
+/* Results Section */
+.result-section {
+    background: linear-gradient(var(--lightslate-blue), var(--lightroyal-blue));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    align-items: center;
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.avg-score-container {
+    flex-grow: 0;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    padding: 2.5rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(var(--violet-blue), var(--persian-blue));
+}
+
+.result-section h1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--light-lavender);
+    margin: 0;
+}
+
+.avg-score {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.max-score {
+    color: var(--light-lavender);
+    font-size: 0.8rem;
+}
+
+.remark {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.comment {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--light-lavender);
+    text-align: center;
+}
+
+
+/* Summary Section */
+.summary-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.summary-section h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: hsl(var(--dark-gray-blue));
+}
+
+.summary-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.summary-section ul li {
+    margin: 0;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color: var(--light-lavender);
+    gap: 0.6rem;
+}
+
+.summary-section ul li .sub-title {
+    margin-right: auto;
+}
+
+.summary-section ul li .sub-marks {
+    color: hsl(var(--dark-gray-blue));
+    font-weight: 700;
+}
+
+.summary-section ul li .max-sub-marks {
+    color: hsla(var(--dark-gray-blue), 0.5);
+    font-weight: 700;
+}
+
+.sub-reaction {
+    background-color: hsla(var(--light-red), 0.05);
+}
+
+.sub-reaction .sub-title {
+    color: hsl(var(--light-red));
+}
+
+.sub-memory {
+    background-color: hsla(var(--orangey-yellow), 0.05);
+}
+
+.sub-memory .sub-title {
+    color: hsl(var(--orangey-yellow));
+}
+
+.sub-verbal {
+    background-color: hsla(var(--green-teal), 0.05);
+}
+
+.sub-verbal .sub-title {
+    color: hsl(var(--green-teal));
+}
+
+.sub-visual {
+    background-color: hsla(var(--cobalt-blue), 0.05);
+}
+
+.sub-visual .sub-title {
+    color: hsl(var(--cobalt-blue));
+}
+
+.summary-section button {
+    border-radius: 2rem;
+    padding: 0.75rem;
+    outline: 0;
+    border: none;
+    background-color: hsl(var(--dark-gray-blue));
+    color: var(--white);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.summary-section button:hover,
+.summary-section button:active,
+.summary-section button:focus {
+    background: linear-gradient(var(--lightslate-blue), var(--lightroyal-blue));
+}
+
+@media (max-width: 600px) {
+    .result-summary-container {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .result-summary-container section {
+        width: 100%;
+    }
+
+    .result-section {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
