@@ -83,23 +83,21 @@ body {
     flex-direction: column;
 }
 
-.social-profile-card nav li {
+.social-profile-card nav a {
     padding: 0.6rem 1rem;
     background-color: var(--grey-700);
     border-radius: 0.4rem;
     text-align: center;
-}
-
-.social-profile-card nav a {
+    width: 100%;
     text-decoration: none;
     color: inherit;
     outline: none;
     font-weight: 600;
 }
 
-.social-profile-card nav li:hover,
-.social-profile-card nav li:focus,
-.social-profile-card nav li:focus-within {
+.social-profile-card nav a:hover,
+.social-profile-card nav a:focus,
+.social-profile-card nav a:focus-within {
     background-color: var(--green);
     color: var(--grey-900);
     outline: none;
