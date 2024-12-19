@@ -1,0 +1,124 @@
+@font-face {
+    font-family: worksans;
+    src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: worksans-italics;
+    src: url(./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: worksans, sans-serif;
+    background-color: var(--light-pink);
+    color: var(--stone-600);
+}
+
+.page-container {
+    height: 100%;
+    width: 100%;
+}
+
+.hero-section {
+    background-image: url('./assets/images/background-pattern-desktop.svg');
+    height: 40%;
+}
+
+.faq-accordion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    z-index: 1;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 0 var(--dark-purple);
+    padding: 25px;
+}
+
+.faq-accordion h1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.faq-accordion ul {
+    list-style: none;
+    padding: 0;
+}
+.accordion-item {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--light-pink);
+}
+
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms;
+}
+
+.accordion-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.accordion-panel:hover,
+.accordion-panel:focus {
+    color: #AD28EB;
+    cursor: pointer;
+}
+
+.accordion-panel::after {
+    content: url('./assets/images/icon-plus.svg');
+    height: 32px;
+    width: 32pxl
+}
+
+.accordion-item.open .accordion-panel::after {
+    content: url('./assets/images/icon-minus.svg');
+}
+
+.accordion-item.open .accordion-content {
+    grid-template-rows: 1fr;
+}
+
+.accordion-content div {
+    overflow: hidden;
+    color: var(--grayish-purple);
+    line-height: 1.5;
+}
+
+.accordion-panel {
+    color: #301534;
+    font-size: 20px;
+}
+
+@media (max-width: 640px) {
+    .hero-section {
+        background-image: url('./assets/images/background-pattern-mobile.svg');
+    }
+
+    .faq-accordion {
+        width: 350px;
+    }
+}
