@@ -12,6 +12,8 @@ This is a repo of my solutions for Frontend Mentor Challenges.
   - [Results Summary Component](https://github.com/nishantm96/nishantm96.github.io/tree/main/results-summary-component)
   - [3 Column Preview Card Component](https://github.com/nishantm96/nishantm96.github.io/tree/main/three-column-preview-card-component)
   - [Contact Form](https://github.com/nishantm96/nishantm96.github.io/tree/main/contact-form)
+  - [Advice Generator App](https://github.com/nishantm96/nishantm96.github.io/tree/main/advice-generator-app)
+
 
 
 ## Author

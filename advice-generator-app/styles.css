@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark-blue);
+    height: 100vh;
+    width: 100vw;
+    font-family: Manrope, sans-serif;
+}
+
+.page-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    padding: 3rem;
+}
+
+main {
+    background-color: var(--dark-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    min-width: 18rem;
+    max-width: 36rem;
+    position: relative;
+}
+
+main h1 {
+    font-size: 1.2rem;
+    color: var(--neon-green);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.4rem;
+    margin: 0;
+}
+
+.advice-content {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--light-cyan);
+}
+
+main img {
+    width: 100%;
+}
+
+main button {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    padding: 1rem;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: var(--neon-green);
+    display: grid;
+    place-content: center;
+}
+
+main button img {
+    margin: 0;
+    padding: 0;
+}
+
+main button:hover,
+main button:active,
+main button:focus {
+    box-shadow: 0 0 1.5rem 0 var(--neon-green);
+}
+
+.quote-endline {
+    margin-bottom: 1rem;
+    width: 100%;
+}
