@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <title>Frontend Mentor | Contact form</title>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="page-container">
+    <form id="contact-form" class="contact-form" novalidate>
+      <h1>Contact Us</h1>
+      <div class="form-group-1">
+        <div id="first-name-group" class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" required />
+          <p class="input-hint"></p>
+        </div>
+        <div id="last-name-group" class="form-group">
+          <label for="last-name" class="last-name">Last Name</label>
+          <input type="text" name="last-name" id="last-name" required />
+          <p class="input-hint"></p>
+        </div>
+      </div>
+
+
+      <div id="email-group" class="form-group">
+        <label for="email" class="email">Email Address</label>
+        <input type="email" name="email" id="email" required />
+        <p class="input-hint"></p>
+      </div>
+
+      <fieldset id="query-type-radioset" class="query-type-form-group">
+        <legend>Query Type</legend>
+        <div class="query-type-options">
+          <div class="option-group">
+            <label>
+              <input type="radio" name="query-type" value="General Enquiry" required/>
+              General Enquiry</label>
+          </div>
+          <div class="option-group">
+            <label>
+              <input type="radio" name="query-type" value="Support Request" />
+              Support Request</label>
+          </div>
+        </div>
+        <p class="input-hint"></p>
+      </fieldset>
+
+      <div id="message-group" class="form-group">
+        <label for="message" class="message">Message</label>
+        <textarea name="message" id="message" rows="4" required></textarea>
+        <p class="input-hint"></p>
+      </div>
+
+
+      <div id="consent-group" class="consent-group">
+        <label for="consent">
+          <input type="checkbox" name="consent" id="consent" required/>
+            I consent to being contacted by the team
+        </label>
+        <p class="input-hint"></p>
+      </div>
+      <button class="submit-btn" type="submit">Submit</button>
+
+    </form>
+  </div>
+  <div class="notification-container" id="notification">
+    <h2>
+      <img src="./assets/images/icon-success-check.svg" alt="Success Notification">
+      <span>Message Sent!</span>
+    </h2>
+    <p>Thanks for completing the form. We'll be in touch soon.</p>
+  </div>
+
+</body>
+
+</html>

@@ -32,7 +32,5 @@ This is a solution to the Frontend Mentor Challenge [3 Column Preview Card Compo
 
 ### What I learned
 
-- I learned the basics of setting up of HTML layout and CSS Flexbox. 
-
-- I learned how to create empty links and that links are tabbable elements (if they have href attribute).
+- I learned the basics of setting up of HTML layout and CSS Flexbox.
 
