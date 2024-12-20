@@ -56,37 +56,36 @@ main h1 {
     font-size: 2.75rem;
     font-weight: 800;
     color: var(--light-cyan);
+    margin: 0;
 }
 
 main img {
     width: 100%;
 }
 
-main button {
+.new-advice-btn {
     position: absolute;
     bottom: 0;
     transform: translateY(50%);
     padding: 1rem;
     border-radius: 50%;
-    outline: none;
-    border: none;
     background-color: var(--neon-green);
     display: grid;
     place-content: center;
 }
 
-main button img {
+.new-advice-btn img {
     margin: 0;
     padding: 0;
 }
 
-main button:hover,
-main button:active,
-main button:focus {
+.new-advice-btn:hover,
+.new-advice-btn:active,
+.new-advice-btn:focus {
     box-shadow: 0 0 1.5rem 0 var(--neon-green);
 }
 
-.quote-endline {
+.advice-endline {
     margin-bottom: 1rem;
     width: 100%;
 }
