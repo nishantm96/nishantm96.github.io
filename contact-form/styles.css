@@ -42,7 +42,7 @@ body {
 .contact-form {
     background-color: var(--white);
     padding: 2rem;
-    width: 40%;
+    width: 45%;
     min-width: fit-content;
     border-radius: 0.75rem;
     display: flex;
@@ -59,7 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: 0.6rem;
+    gap: 0.3rem;
 }
 
 .form-group label::after {
@@ -162,7 +162,7 @@ body {
 .consent-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .consent-group .form-group {
