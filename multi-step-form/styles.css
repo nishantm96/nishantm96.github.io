@@ -1,0 +1,659 @@
+@font-face {
+    font-family: Ubuntu;
+    font-weight: 400;
+    font-style: normal;
+    src: url(./assets/fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-weight: 500;
+    font-style: normal;
+    src: url(./assets/fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+    font-family: Ubuntu;
+    font-weight: 700;
+    font-style: normal;
+    src: url(./assets/fonts/Ubuntu-Bold.ttf);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--magnolia);
+    font-family: Ubuntu, sans-serif;
+
+    display: grid;
+    place-items: center;
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.step-tracker {
+    background-image: url('./assets/images/bg-sidebar-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25vh;
+}
+
+.steps-list {
+    margin: 0;
+    padding: 2rem 0;
+    list-style: none;
+    counter-reset: step-number;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.step-tracker .step {
+    counter-increment: step-number;
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step::before {
+    content: counter(step-number);
+    font-weight: 700;
+    font-size: 1rem;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    color: var(--magnolia);
+    border: 1px solid var(--magnolia);
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.step.selected::before {
+    background-color: var(--light-blue);
+    color: var(--marine-blue);
+}
+
+.step-info {
+    display: none;
+}
+
+.multi-step-form {
+    background-color: var(--white);
+    margin: 2rem;
+    padding: 2.5rem 2rem;
+    border-radius: 0.8rem;
+    position: relative;
+    top: -7.5rem;
+    box-shadow: 0 0 0.5rem -0.5rem var(--purplish-blue);
+}
+
+.form-step {
+    height: 100%;
+    display: none;
+    width: 100%;
+}
+
+.form-step.show {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+}
+
+.step-details h1 {
+    color: var(--marine-blue);
+    margin: 0;
+}
+
+.step-details p {
+    color: var(--cool-gray);
+}
+
+.step-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-item {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item input::placeholder {
+    color: var(--cool-gray);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.form-item div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-item input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    border-radius: 0.4rem;
+    outline: none;
+    border: 2px solid var(--light-gray);
+}
+
+.form-step>.step-details {
+    flex: 0;
+}
+
+.form-step>.step-inputs {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.step-actions {
+    display: grid;
+    grid-auto-flow: column;
+    background-color: var(--white);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 1rem;
+}
+
+.step-actions button {
+    cursor: pointer;
+}
+
+.step-actions .back-btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--cool-gray);
+    font-size: 1.1rem;
+    justify-self: flex-start;
+}
+
+.step-actions .back-btn:hover,
+.step-actions .back-btn:active,
+.step-actions .back-btn:focus {
+    outline: none;
+    background: none;
+    border: none;
+    color: var(--marine-blue);
+}
+
+.step-actions .next-btn {
+    justify-self: flex-end;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: var(--marine-blue);
+    border-radius: 0.4rem;
+    color: var(--magnolia);
+    font-size: 1rem;
+    justify-self: flex-end;
+}
+
+/* STEP 1 Specific styles */
+.step-actions .next-btn:hover,
+.step-actions .next-btn:active,
+.step-actions .next-btn:focus {
+    background-color: var(--purplish-blue);
+}
+
+.form-item input:focus,
+.form-item input:active {
+    border-color: var(--purplish-blue);
+}
+
+.form-item.invalid input {
+    border-color: var(--strawberry-red);
+}
+
+.form-item.invalid .input-hint {
+    display: block;
+}
+
+.input-hint {
+    display: none;
+    color: var(--strawberry-red);
+    font-size: 0.8rem;
+}
+
+/* STEP 2 Specific Styles */
+.plan-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.plan-option {
+    position: relative;
+    border: 2px solid var(--cool-gray);
+    border-radius: 0.5rem;
+    display: flex;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.plan-option input[type="radio"] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.plan-option:hover,
+.plan-option:has(input[type="radio"]:active),
+.plan-option:has(input[type="radio"]:focus) {
+    border-color: var(--purplish-blue);
+}
+
+.plan-option:has(input[type="radio"]:checked) {
+    background-color: var(--magnolia);
+}
+
+.plan-option img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.plan-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.plan-price {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.price {
+    color: var(--cool-gray);
+}
+
+.step-inputs:has(:not(input[type="checkbox"]:checked)) .yearly,
+.step-inputs:has(:not(input[type="checkbox"]:checked)) .discount {
+    display: none;
+}
+
+.step-inputs:has(:not(input[type="checkbox"]:checked)) .monthly {
+    display: flex;
+}
+
+.step-inputs:has(input[type="checkbox"]:checked) .monthly {
+    display: none;
+}
+
+.step-inputs:has(input[type="checkbox"]:checked) .yearly,
+.step-inputs:has(input[type="checkbox"]:checked) .discount {
+    display: flex;
+    ;
+}
+
+.plan-name {
+    margin: 0
+}
+
+.plan-info p {
+    margin: 0;
+}
+
+.plan-duration {
+    width: 100%;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    font-size: 1.2rem;
+    background-color: var(--magnolia);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.plan-duration input[type="checkbox"] {
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.plan-duration .monthly-plan {
+    color: var(--marine-blue);
+}
+
+.plan-duration .yearly-plan {
+    color: var(--cool-gray);
+}
+
+.plan-duration:has(input[type="checkbox"]:checked) .monthly-plan {
+    color: var(--cool-gray);
+}
+
+.plan-duration:has(input[type="checkbox"]:checked) .yearly-plan {
+    color: var(--marine-blue);
+}
+
+/* Plan Duration Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider.round {
+    border-radius: 26px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--marine-blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggle-switch input:checked+.slider {
+    background-color: var(--marine-blue);
+}
+
+.toggle-switch input:focus+.slider {
+    box-shadow: 0 0 1px var(--marine-blue);
+}
+
+.toggle-switch input:checked+.slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+}
+
+/* STEP 3 Specific Types */
+.addon {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    border: 2px solid var(--cool-gray);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.addon:hover,
+.addon:focus-within {
+    border-color: var(--purplish-blue);
+}
+
+.addon:has(:checked) {
+    background-color: var(--magnolia);
+    border-color: var(--purplish-blue);
+}
+
+.addon input {
+    width: 1.5rem;
+    aspect-ratio: 1;
+    accent-color: var(--purplish-blue);
+}
+
+.addon-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.addon-detail h2 {
+    margin: 0;
+    color: var(--marine-blue);
+}
+
+.addon-detail p {
+    margin: 0;
+    color: var(--cool-gray);
+}
+
+.addon .addon-price {
+    margin-left: auto;
+    color: var(--purplish-blue);
+}
+
+.form-success.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-success h1 {
+    margin: 0;
+}
+
+.form-success p {
+    margin: 0;
+    color: var(--cool-gray);
+    word-break: break-word;
+}
+
+.bill {
+    padding: 1rem;
+    background-color: var(--magnolia);
+    border-radius: 0.5rem;
+}
+
+.plan-bill {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.plan-bill .bill-amount {
+    color: var(--marine-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.plan-bill .bill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bill-item a {
+    color: var(--cool-gray);
+    outline: none;
+}
+
+.bill-item a:hover,
+.bill-item a:active,
+.bill-item a:focus {
+    color: var(--purplish-blue);
+}
+
+.plan-bill .selected-plan {
+    color: var(--marine-blue);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.addons-bill {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.addons-bill li {
+    list-style: none;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.selected-addon {
+    color: var(--cool-gray);
+}
+
+.bill-amount {
+    color: var(--marine-blue);
+}
+
+.total-bill {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-bill span {
+    color: var(--cool-gray);
+}
+
+.total-bill-amount {
+    color: var(--purplish-blue);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+@media (min-width: 760px) {
+    main {
+        max-width: 960px;
+        width: 90%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        background-color: var(--white);
+        border-radius: 1rem;
+        box-shadow: 0 0 0.5rem -0.5rem var(--purplish-blue);
+    }
+
+    .step-tracker {
+        display: flex;
+        height: auto;
+        border-radius: 0.8rem;
+        flex-direction: column;
+        padding: 1rem;
+        width: 32%;
+        flex-grow: 1;
+        background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    }
+
+    .step-tracker .steps-list {
+        flex-direction: column;
+    }
+
+    .step-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .step-number {
+        color: var(--cool-gray);
+        text-transform: uppercase;
+    }
+
+    .step-name {
+        color: var(--magnolia);
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .multi-step-form {
+        width: 68%;
+        background-color: var(--white);
+        margin: 0 2rem;
+        padding: 2rem 2rem 0 2rem;
+        border-radius: 0.8rem;
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        flex-grow: 1;
+    }
+
+    .step-details p {
+        margin-bottom: 0;
+    }
+
+    .step-actions {
+        display: grid;
+        grid-auto-flow: column;
+        background-color: var(--white);
+        position: static;
+        width: 100%;
+        padding: 0;
+    }
+
+    .plan-options {
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-basis: 0;
+        flex-grow: 1;
+    }
+
+    .plan-option {
+        flex-basis: 0;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+}
